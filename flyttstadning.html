@@ -18,21 +18,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --spruce:#0E2E26;
-  --spruce-2:#164036;
-  --spruce-3:#0A241E;
+  --spruce:#1A1614;
+  --spruce-2:#2C2523;
+  --spruce-3:#0F0D0B;
   --bone:#F6F5F1;
   --white:#FFFFFF;
-  --amber:#D99423;
-  --ink:#12211D;
-  --ink-60:rgba(18,33,29,.60);
-  --ink-40:rgba(18,33,29,.40);
-  --ink-10:rgba(18,33,29,.10);
-  --line:rgba(18,33,29,.12);
+  --amber:#ED2226;
+  --ink:#1A1614;
+  --ink-60:rgba(26,22,20,.60);
+  --ink-40:rgba(26,22,20,.40);
+  --ink-10:rgba(26,22,20,.10);
+  --line:rgba(26,22,20,.12);
   --lite:rgba(255,255,255,.66);
   --lite-2:rgba(255,255,255,.16);
-  --sh:0 1px 2px rgba(14,46,38,.05), 0 12px 34px -10px rgba(14,46,38,.14);
-  --sh-lg:0 2px 4px rgba(14,46,38,.06), 0 30px 70px -20px rgba(14,46,38,.30);
+  --sh:0 1px 2px rgba(26,22,20,.05), 0 12px 34px -10px rgba(26,22,20,.14);
+  --sh-lg:0 2px 4px rgba(26,22,20,.06), 0 30px 70px -20px rgba(26,22,20,.30);
   --pad:clamp(20px,5vw,60px);
 }
 *{box-sizing:border-box}
@@ -80,13 +80,15 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* ============ TOPP ============ */
 .top{position:sticky;top:0;z-index:60;
-  background:rgba(14,46,38,.72);
+  background:rgba(26,22,20,.72);
   -webkit-backdrop-filter:blur(20px) saturate(160%);
   backdrop-filter:blur(20px) saturate(160%);
   border-bottom:1px solid rgba(255,255,255,.10);color:var(--white)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;height:70px}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-.logo b{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.logo img{height:34px;width:auto;display:block}
+@media(max-width:600px){.logo img{height:28px}}
+footer .logo img{height:38px;margin-bottom:14px}
 .logo .mono{color:var(--lite);font-size:10.5px}
 .top nav{display:flex;gap:28px;font-size:15.5px}
 .top nav a{color:var(--lite);text-decoration:none;transition:color .18s}
@@ -102,9 +104,9 @@ button,input,select,textarea{font:inherit;color:inherit}
   padding:clamp(46px,6.6vw,86px) 0 clamp(52px,7vw,92px)}
 .hero.tall{padding-bottom:clamp(150px,17vw,220px)}
 .hero::after{content:"";position:absolute;right:-16%;top:-38%;width:66%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(217,148,35,.20),transparent 62%);pointer-events:none}
+  background:radial-gradient(circle,rgba(237,34,38,.20),transparent 62%);pointer-events:none}
 .hero::before{content:"";position:absolute;left:-10%;bottom:-46%;width:52%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(120,220,180,.14),transparent 64%);pointer-events:none}
+  background:radial-gradient(circle,rgba(255,255,255,.07),transparent 64%);pointer-events:none}
 .hero .wrap{position:relative;z-index:2}
 .crumb{color:var(--lite);font-size:14px;margin:0 0 22px}
 .crumb a{text-decoration:none}
@@ -112,7 +114,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .pill{display:inline-flex;align-items:center;gap:10px;border-radius:100px;
   padding:7px 16px 7px 12px;margin-bottom:clamp(22px,3.2vw,32px);color:var(--lite)}
 .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none;
-  box-shadow:0 0 0 4px rgba(217,148,35,.18)}
+  box-shadow:0 0 0 4px rgba(237,34,38,.18)}
 h1{font-size:clamp(36px,6.2vw,74px);line-height:1.03;letter-spacing:-.035em;font-weight:600;
   margin:0 0 24px;max-width:17ch}
 h1 .hl{color:var(--amber)}
@@ -123,8 +125,8 @@ h1 .hl{color:var(--amber)}
 /* ============ KNAPPAR ============ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
   border:0;border-radius:13px;padding:17px 28px;font-size:16.5px;font-weight:500;cursor:pointer;transition:.18s}
-.btn-amber{background:var(--amber);color:var(--spruce);font-weight:600}
-.btn-amber:hover{background:#EBA936;transform:translateY(-1px)}
+.btn-amber{background:#D31A1E;color:#fff;font-weight:600}
+.btn-amber:hover{background:#B81317;transform:translateY(-1px)}
 .btn-dark{background:var(--spruce);color:var(--white)}
 .btn-dark:hover{background:var(--spruce-2);transform:translateY(-1px)}
 .btn-ghost{background:rgba(255,255,255,.08);color:var(--white);border:1px solid var(--lite-2);
@@ -168,10 +170,10 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .check input{width:19px;height:19px;margin:2px 0 0;accent-color:var(--spruce);flex:none}
 .check .t{font-size:15px;line-height:1.4;font-weight:500}
 .check .t small{display:block;color:var(--ink-60);font-size:13.5px;font-weight:400;margin-top:2px}
-.check:has(input:checked){border-color:var(--spruce);background:rgba(14,46,38,.035)}
+.check:has(input:checked){border-color:var(--spruce);background:rgba(26,22,20,.035)}
 .plan{flex:1;min-height:190px;display:grid;place-items:center}
 .plan svg{width:100%;height:auto;max-height:230px;overflow:visible}
-.pl-fill{fill:rgba(14,46,38,.06)}
+.pl-fill{fill:rgba(26,22,20,.06)}
 .pl-line{fill:none;stroke:var(--spruce);stroke-width:1.5}
 .dim{stroke:var(--ink-40);stroke-width:1}
 .dim-t{fill:var(--ink-60);font-family:"DM Mono",monospace;font-size:11px}
@@ -216,7 +218,7 @@ h2.big{font-size:clamp(27px,3.8vw,44px);line-height:1.09;letter-spacing:-.035em;
 .card{background:var(--white);border:1px solid var(--line);border-radius:16px;
   padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:13px;transition:.2s}
 .card:hover{box-shadow:var(--sh);transform:translateY(-3px)}
-.ic{width:44px;height:44px;border-radius:11px;background:rgba(14,46,38,.06);display:grid;place-items:center;margin-bottom:6px}
+.ic{width:44px;height:44px;border-radius:11px;background:rgba(26,22,20,.06);display:grid;place-items:center;margin-bottom:6px}
 .ic svg{width:22px;height:22px;stroke:var(--spruce);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .card h3{font-size:21px;font-weight:600;letter-spacing:-.02em;margin:0}
 .card p{margin:0;color:var(--ink-60);font-size:15.5px;flex:1}
@@ -262,7 +264,7 @@ h2.big{font-size:clamp(27px,3.8vw,44px);line-height:1.09;letter-spacing:-.035em;
 .steps{background:var(--spruce);color:var(--white);border-radius:24px;padding:clamp(30px,4.6vw,60px);
   position:relative;overflow:hidden}
 .steps::after{content:"";position:absolute;right:-12%;top:-46%;width:52%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(217,148,35,.16),transparent 62%)}
+  background:radial-gradient(circle,rgba(237,34,38,.16),transparent 62%)}
 .steps>*{position:relative;z-index:1}
 .steps .mono{color:var(--amber);display:block;margin-bottom:16px}
 .steps h2{font-size:clamp(25px,3.4vw,39px);line-height:1.1;letter-spacing:-.035em;font-weight:600;
@@ -305,7 +307,7 @@ h2.big{font-size:clamp(27px,3.8vw,44px);line-height:1.09;letter-spacing:-.035em;
   display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:space-between;
   position:relative;overflow:hidden}
 .final::after{content:"";position:absolute;left:-8%;bottom:-70%;width:46%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(217,148,35,.18),transparent 64%)}
+  background:radial-gradient(circle,rgba(237,34,38,.18),transparent 64%)}
 .final>*{position:relative;z-index:1}
 .final h2{font-size:clamp(25px,3.4vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 12px;max-width:16ch}
 .final p{margin:0;color:var(--lite);max-width:42ch}
@@ -340,13 +342,13 @@ footer a:hover{color:var(--white)}
 }
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MovingCompany", "name": "4Y Flytt & Städ Sverige AB", "url": "https://4yflytt.se", "telephone": "+46102146353", "email": "info@4yflytt.se", "address": {"@type": "PostalAddress", "streetAddress": "Hejargatan 2", "postalCode": "632 29", "addressLocality": "Eskilstuna", "addressCountry": "SE"}, "areaServed": ["Stockholm", "Uppsala", "Västerås", "Eskilstuna", "Örebro", "Södertälje", "Köping", "Strängnäs", "Katrineholm", "Nyköping", "Arboga", "Hallstahammar"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "100", "bestRating": "5"}, "review": [{"@type": "Review", "author": {"@type": "Person", "name": "Maria Andersson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Fantastisk service! Flyttgänget var otroligt professionella och snabba. Allting gick smidigt och de var noga med att hantera våra saker varsamt."}, {"@type": "Review", "author": {"@type": "Person", "name": "Erik Johansson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Bästa flyttfirman jag anlitat. Punktliga, trevliga och effektiva. De hjälpte till med både packning och städning. Verkligen en helhetslösning!"}, {"@type": "Review", "author": {"@type": "Person", "name": "Anna Svensson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Jättebra pris och utmärkt service. Killarna var starka och snabba, men ändå försiktiga med alla möbler. Flyttstädningen var perfekt!"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MovingCompany", "name": "4Y Flytt & Städ Sverige AB", "url": "https://4yflytt.se", "logo": "https://4yflytt.se/assets/logo.png", "image": "https://4yflytt.se/assets/logo.png", "telephone": "+46102146353", "email": "info@4yflytt.se", "address": {"@type": "PostalAddress", "streetAddress": "Hejargatan 2", "postalCode": "632 29", "addressLocality": "Eskilstuna", "addressCountry": "SE"}, "areaServed": ["Stockholm", "Uppsala", "Västerås", "Eskilstuna", "Örebro", "Södertälje", "Köping", "Strängnäs", "Katrineholm", "Nyköping", "Arboga", "Hallstahammar"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "100", "bestRating": "5"}, "review": [{"@type": "Review", "author": {"@type": "Person", "name": "Maria Andersson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Fantastisk service! Flyttgänget var otroligt professionella och snabba. Allting gick smidigt och de var noga med att hantera våra saker varsamt."}, {"@type": "Review", "author": {"@type": "Person", "name": "Erik Johansson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Bästa flyttfirman jag anlitat. Punktliga, trevliga och effektiva. De hjälpte till med både packning och städning. Verkligen en helhetslösning!"}, {"@type": "Review", "author": {"@type": "Person", "name": "Anna Svensson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Jättebra pris och utmärkt service. Killarna var starka och snabba, men ändå försiktiga med alla möbler. Flyttstädningen var perfekt!"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Behöver bostaden vara helt tom?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Vi kan inte garantera resultatet om möbler eller kartonger står kvar, eftersom ytorna under dem inte går att komma åt."}}, {"@type": "Question", "name": "Ingår fönsterputsning?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, fönsterputsning ingår i flyttstädningen. Fönster som inte går att öppna eller sitter otillgängligt högt putsas så långt det är säkert att utföra."}}, {"@type": "Question", "name": "Erbjuder ni RUT-avdrag på städningen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, alla våra tjänster för privatpersoner ger rätt till RUT-avdrag. Du betalar 50 % av arbetskostnaden direkt på fakturan och vi sköter all administration med Skatteverket."}}, {"@type": "Question", "name": "Kan jag boka städning utan att boka flytt?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, flyttstädning bokas fristående och kostar detsamma oavsett om ni anlitar oss för själva flytten."}}]}</script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html"><b>4Y</b><span class="mono">Flytt &amp; Städ</span></a>
+    <a class="logo" href="index.html"><img src="assets/logo-ljus.png" alt="4Y Flytt &amp; Städ Sverige AB" width="184" height="34"></a>
     <nav><a href="flytthjalp.html">Flytthjälp</a><a href="flyttstadning.html" aria-current="page">Flyttstädning</a><a href="nedpackning.html">Nedpackning</a><a href="magasinering.html">Magasinering</a><a href="foretagsflytt.html">Företagsflytt</a><a href="om-oss.html">Om oss</a></nav>
     <a class="tel" href="tel:+46102146353">010&#8209;214 63 53</a>
   </div>
@@ -424,7 +426,7 @@ footer a:hover{color:var(--white)}
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <h5>4Y Flytt &amp; Städ Sverige AB</h5>
+        <a class="logo" href="index.html"><img src="assets/logo-ljus.png" alt="4Y Flytt &amp; Städ Sverige AB" width="205" height="38"></a>
         <p>Hejargatan 2, 632 29 Eskilstuna<br>Org.nr 559328-5108<br>Godkänd för F&#8209;skatt<br>Trafiktillstånd, Transportstyrelsen<br>Försäkrade hos Trygg-Hansa, upp till 10 MSEK</p>
       </div>
       <div>
