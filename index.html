@@ -3,180 +3,214 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>4Y Flytt &amp; Städ — Flyttfirma i Mälardalen | Räkna ut priset direkt</title>
-<meta name="description" content="Flytthjälp, flyttstädning och magasinering i Mälardalen. Räkna ut ditt pris direkt på sidan, med RUT-avdraget avräknat. Reco Rekommenderad tre år i rad.">
+<title>4Y Flytt &amp; Städ — Flyttfirma i Mälardalen | Se priset direkt</title>
+<meta name="description" content="Flytthjälp, flyttstädning och magasinering i Mälardalen. Se ditt pris direkt på sidan med RUT-avdraget avräknat. Reco Rekommenderad tre år i rad.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#DEE4E1;
-  --paper-2:#EAEEEC;
-  --ink:#131E1B;
-  --ink-60:rgba(19,30,27,.62);
-  --ink-30:rgba(19,30,27,.30);
-  --ink-12:rgba(19,30,27,.12);
-  --tape:#E8531F;
-  --spruce:#1F4A3C;
-  --r:2px;
-  --pad:clamp(20px,5vw,64px);
+  --spruce:#0E2E26;
+  --spruce-2:#164036;
+  --bone:#F6F5F1;
+  --white:#FFFFFF;
+  --amber:#D99423;
+  --ink:#12211D;
+  --ink-60:rgba(18,33,29,.60);
+  --ink-40:rgba(18,33,29,.40);
+  --ink-10:rgba(18,33,29,.10);
+  --line:rgba(18,33,29,.12);
+  --lite:rgba(255,255,255,.62);
+  --lite-2:rgba(255,255,255,.16);
+  --sh:0 1px 2px rgba(14,46,38,.05), 0 12px 34px -10px rgba(14,46,38,.14);
+  --sh-lg:0 2px 4px rgba(14,46,38,.06), 0 30px 70px -20px rgba(14,46,38,.28);
+  --pad:clamp(20px,5vw,60px);
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0; background:var(--paper); color:var(--ink);
+  margin:0;background:var(--bone);color:var(--ink);
   font-family:"Familjen Grotesk",system-ui,sans-serif;
-  font-size:17px; line-height:1.5;
-  background-image:
-    linear-gradient(var(--ink-12) 1px,transparent 1px),
-    linear-gradient(90deg,var(--ink-12) 1px,transparent 1px);
-  background-size:88px 88px;
-  background-position:-1px -1px;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
-.mono{font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+img{max-width:100%}
 a{color:inherit}
 button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:"DM Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
 
-/* ---------- topp ---------- */
-.top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0 0}
-.logo{display:flex;align-items:baseline;gap:9px;text-decoration:none}
-.logo b{font-size:23px;font-weight:700;letter-spacing:-.02em}
-.logo span{color:var(--ink-60)}
-.top nav{display:flex;gap:26px}
-.top nav a{color:var(--ink-60);text-decoration:none}
-.top nav a:hover{color:var(--ink)}
-.tel{border:1px solid var(--ink);border-radius:var(--r);padding:9px 15px;text-decoration:none;white-space:nowrap}
-.tel:hover{background:var(--ink);color:var(--paper)}
-@media(max-width:900px){.top nav{display:none}}
+/* ============ topp ============ */
+.top{position:sticky;top:0;z-index:40;background:var(--spruce);color:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;height:70px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo b{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.logo .mono{color:var(--lite);font-size:10.5px}
+.top nav{display:flex;gap:30px;font-size:15.5px}
+.top nav a{color:var(--lite);text-decoration:none;transition:color .18s}
+.top nav a:hover{color:var(--white)}
+.tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:15.5px;
+     border:1px solid var(--lite-2);border-radius:100px;padding:9px 18px;transition:.18s}
+.tel:hover{background:var(--white);color:var(--spruce);border-color:var(--white)}
+@media(max-width:960px){.top nav{display:none}}
 
-/* ---------- hero ---------- */
-.hero{padding:clamp(44px,7vw,84px) 0 clamp(28px,4vw,44px)}
-.eyebrow{color:var(--ink-60);margin-bottom:22px}
-.eyebrow i{font-style:normal;color:var(--tape)}
-h1{
-  font-size:clamp(38px,7.2vw,82px); line-height:.96; letter-spacing:-.035em;
-  font-weight:600; margin:0 0 22px; max-width:16ch;
-}
-h1 em{font-style:italic;font-weight:400}
-.lede{font-size:clamp(17px,2vw,20px);color:var(--ink-60);max-width:52ch;margin:0}
+/* ============ hero ============ */
+.hero{background:var(--spruce);color:var(--white);padding:clamp(48px,7vw,92px) 0 clamp(150px,17vw,220px);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-14%;top:-32%;width:62%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,148,35,.16),transparent 62%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--lite-2);border-radius:100px;
+  padding:7px 16px 7px 12px;margin-bottom:clamp(24px,3.4vw,34px);color:var(--lite)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none}
+h1{font-size:clamp(38px,6.6vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:600;
+   margin:0 0 24px;max-width:17ch}
+h1 .hl{color:var(--amber)}
+.lede{font-size:clamp(17px,1.9vw,20.5px);line-height:1.55;color:var(--lite);max-width:50ch;margin:0}
 
-/* ---------- kalkyl ---------- */
-.calc{
-  display:grid; grid-template-columns:1.05fr 1fr; gap:0;
-  border:1.5px solid var(--ink); border-radius:var(--r);
-  background:var(--paper-2); overflow:hidden; margin-top:clamp(32px,5vw,52px);
-}
-@media(max-width:880px){.calc{grid-template-columns:1fr}}
-.calc-in{padding:clamp(22px,3.4vw,36px);border-right:1.5px solid var(--ink)}
-@media(max-width:880px){.calc-in{border-right:0;border-bottom:1.5px solid var(--ink)}}
-.calc-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px}
-.calc-head .mono{color:var(--ink-60)}
+/* ============ kalkyl ============ */
+.calc-shell{margin-top:clamp(-130px,-14vw,-180px);position:relative;z-index:5}
+.calc{display:grid;grid-template-columns:1.02fr .98fr;
+  background:var(--white);border-radius:18px;box-shadow:var(--sh-lg);overflow:hidden}
+@media(max-width:900px){.calc{grid-template-columns:1fr}}
+.calc-in{padding:clamp(24px,3.4vw,40px)}
+.calc-out{padding:clamp(24px,3.4vw,40px);background:linear-gradient(180deg,#FAFAF8,#F2F3EF);
+  border-left:1px solid var(--line);display:flex;flex-direction:column;gap:22px}
+@media(max-width:900px){.calc-out{border-left:0;border-top:1px solid var(--line)}}
+.calc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.calc-head h2{font-size:20px;font-weight:600;letter-spacing:-.02em;margin:0}
+.calc-head .mono{color:var(--ink-40)}
 
-.field{margin-bottom:24px}
-.field>label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
-.field .val{font-family:"DM Mono",monospace;font-size:15px}
-.field .val b{font-size:21px;font-weight:500}
+.field{margin-bottom:26px}
+.field>.lab{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.field .lab span:first-child{font-size:15.5px;font-weight:500}
+.field .val{color:var(--ink-60);font-size:14px}
+.field .val b{font-family:"DM Mono",monospace;font-size:19px;font-weight:500;color:var(--ink)}
 
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--ink-30);border-radius:2px;margin:12px 0 4px}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--tape);border:2px solid var(--paper-2);cursor:grab}
-input[type=range]::-moz-range-thumb{width:20px;height:20px;border:2px solid var(--paper-2);border-radius:50%;background:var(--tape);cursor:grab}
-input[type=range]:focus-visible{outline:2px solid var(--tape);outline-offset:6px}
-.scale{display:flex;justify-content:space-between;color:var(--ink-30);font-family:"DM Mono",monospace;font-size:11px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:100px;
+  background:var(--ink-10);margin:6px 0 8px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+  background:var(--white);border:1px solid var(--line);box-shadow:var(--sh);cursor:grab}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--white);
+  border:1px solid var(--line);box-shadow:var(--sh);cursor:grab}
+input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:6px}
+.scale{display:flex;justify-content:space-between;color:var(--ink-40);
+  font-family:"DM Mono",monospace;font-size:11px}
 
-.seg{display:flex;gap:0;border:1px solid var(--ink);border-radius:var(--r);overflow:hidden}
-.seg button{flex:1;background:none;border:0;border-right:1px solid var(--ink);padding:11px 6px;cursor:pointer;font-size:15px;line-height:1.2}
-.seg button:last-child{border-right:0}
-.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper-2)}
-.seg button:focus-visible{outline:2px solid var(--tape);outline-offset:-4px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.seg button{background:var(--white);border:1px solid var(--line);border-radius:11px;padding:13px 8px;
+  cursor:pointer;font-size:14.5px;line-height:1.25;transition:.18s;text-align:center}
+.seg button:hover{border-color:var(--ink-40)}
+.seg button[aria-pressed=true]{background:var(--spruce);border-color:var(--spruce);color:var(--white)}
+.seg button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 
-.check{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--ink);border-radius:var(--r);padding:14px;cursor:pointer}
-.check input{width:19px;height:19px;margin:2px 0 0;accent-color:var(--tape);flex:none}
-.check .t{font-size:15px;line-height:1.35}
-.check .t small{display:block;color:var(--ink-60);font-size:13.5px}
-.check:has(input:checked){background:rgba(232,83,31,.07);border-color:var(--tape)}
+.check{display:flex;align-items:flex-start;gap:13px;border:1px solid var(--line);border-radius:13px;
+  padding:16px;cursor:pointer;background:var(--white);transition:.18s}
+.check:hover{border-color:var(--ink-40)}
+.check input{width:19px;height:19px;margin:2px 0 0;accent-color:var(--spruce);flex:none}
+.check .t{font-size:15px;line-height:1.4;font-weight:500}
+.check .t small{display:block;color:var(--ink-60);font-size:13.5px;font-weight:400;margin-top:2px}
+.check:has(input:checked){border-color:var(--spruce);background:rgba(14,46,38,.035)}
 
-/* ---------- ritning ---------- */
-.calc-out{padding:clamp(22px,3.4vw,36px);display:flex;flex-direction:column;gap:20px}
-.plan{position:relative;flex:1;min-height:230px;display:grid;place-items:center}
-.plan svg{width:100%;height:auto;max-height:270px;overflow:visible}
-.pl-fill{fill:rgba(31,74,60,.10)}
-.pl-line{fill:none;stroke:var(--ink);stroke-width:1.5}
-.dim{stroke:var(--tape);stroke-width:1}
-.dim-t{fill:var(--tape);font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.04em}
-.boxes{fill:var(--spruce);opacity:.75}
+/* ---- ritning ---- */
+.plan{flex:1;min-height:190px;display:grid;place-items:center}
+.plan svg{width:100%;height:auto;max-height:230px;overflow:visible}
+.pl-fill{fill:rgba(14,46,38,.06)}
+.pl-line{fill:none;stroke:var(--spruce);stroke-width:1.5;rx:3}
+.dim{stroke:var(--ink-40);stroke-width:1}
+.dim-t{fill:var(--ink-60);font-family:"DM Mono",monospace;font-size:11px}
+.boxes{fill:var(--spruce);opacity:.28}
 
-.price{border-top:1.5px solid var(--ink);padding-top:18px}
-.row{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;font-family:"DM Mono",monospace;font-size:14px}
-.row.rut{color:var(--tape)}
-.row.tot{border-top:1px solid var(--ink-12);margin-top:9px;padding-top:13px;align-items:flex-end}
-.row.tot .lbl{font-family:"Familjen Grotesk",sans-serif;font-size:17px;letter-spacing:0}
-.sum{font-family:"DM Mono",monospace;font-size:clamp(28px,4.4vw,40px);font-weight:500;letter-spacing:-.02em;line-height:1}
-.note{color:var(--ink-60);font-size:13px;margin:12px 0 0}
+.price{border-top:1px solid var(--line);padding-top:20px}
+.row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;font-size:15px;color:var(--ink-60)}
+.row span:last-child{font-family:"DM Mono",monospace;font-size:14.5px;color:var(--ink)}
+.row.rut span{color:#2E7D52}
+.row.tot{margin-top:12px;padding-top:18px;border-top:1px solid var(--line);align-items:flex-end}
+.row.tot .lbl{font-size:16px;color:var(--ink);font-weight:500}
+.sum{font-size:clamp(30px,4.2vw,42px)!important;font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--ink)!important}
+.note{color:var(--ink-40);font-size:12.5px;line-height:1.5;margin:14px 0 0}
 
-.cta{
-  display:block;width:100%;text-align:center;text-decoration:none;
-  background:var(--tape);color:#fff;border:0;border-radius:var(--r);
-  padding:17px;font-size:17px;font-weight:500;cursor:pointer;
-}
-.cta:hover{background:#cf4514}
-.cta:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;text-decoration:none;
+  background:var(--spruce);color:var(--white);border:0;border-radius:13px;padding:19px;
+  font-size:16.5px;font-weight:500;cursor:pointer;transition:.18s}
+.cta:hover{background:var(--spruce-2);transform:translateY(-1px)}
+.cta:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
-/* ---------- band ---------- */
-.band{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);margin-top:clamp(48px,7vw,84px);background:var(--paper-2)}
-.band .wrap{display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,56px);padding-top:20px;padding-bottom:20px}
-.band div{display:flex;align-items:baseline;gap:9px}
-.band b{font-family:"DM Mono",monospace;font-weight:500;font-size:15px}
-.band span{color:var(--ink-60);font-size:14.5px}
+/* ============ trust ============ */
+.trust{padding:clamp(44px,6vw,72px) 0 0}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,40px)}
+@media(max-width:820px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:28px}}
+.stat b{display:block;font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.stat span{display:block;color:var(--ink-60);font-size:14.5px;margin-top:5px}
+.stat .mono{color:var(--amber);margin-bottom:9px}
 
-/* ---------- sektioner ---------- */
-section{padding:clamp(56px,8vw,104px) 0}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
-.sec-head .mono{color:var(--tape);flex:none}
-h2{font-size:clamp(27px,3.8vw,42px);line-height:1.06;letter-spacing:-.03em;font-weight:600;margin:0;max-width:22ch}
+/* ============ sektioner ============ */
+section{padding:clamp(60px,8vw,110px) 0}
+.sec-head{max-width:62ch;margin-bottom:clamp(30px,4vw,46px)}
+.sec-head .mono{color:var(--amber);display:block;margin-bottom:16px}
+h2.big{font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 14px;max-width:20ch}
+.sec-head p{margin:0;color:var(--ink-60);font-size:17px;max-width:52ch}
 
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--ink);border:1.5px solid var(--ink);border-radius:var(--r)}
-@media(max-width:820px){.grid3{grid-template-columns:1fr}}
-.card{background:var(--paper-2);padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:12px;min-height:240px}
-.card .mono{color:var(--ink-30)}
-.card h3{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:13px;transition:.2s}
+.card:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.ic{width:44px;height:44px;border-radius:11px;background:rgba(14,46,38,.06);display:grid;place-items:center;margin-bottom:6px}
+.ic svg{width:22px;height:22px;stroke:var(--spruce);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:21px;font-weight:600;letter-spacing:-.02em;margin:0}
 .card p{margin:0;color:var(--ink-60);font-size:15.5px;flex:1}
-.card a{color:var(--tape);text-decoration:none;font-size:15.5px}
-.card a:hover{text-decoration:underline}
+.card a{color:var(--spruce);text-decoration:none;font-size:15.5px;font-weight:500}
+.card a:hover{color:var(--amber)}
 
-.steps{border-top:1px solid var(--ink-12)}
-.step{display:grid;grid-template-columns:64px 1fr 1fr;gap:clamp(14px,3vw,40px);padding:24px 0;border-bottom:1px solid var(--ink-12);align-items:baseline}
-@media(max-width:760px){.step{grid-template-columns:44px 1fr}.step p{grid-column:2}}
-.step .n{font-family:"DM Mono",monospace;color:var(--tape);font-size:14px}
-.step h4{margin:0;font-size:20px;font-weight:600;letter-spacing:-.01em}
-.step p{margin:0;color:var(--ink-60);font-size:15.5px}
+/* steg */
+.steps{background:var(--spruce);color:var(--white);border-radius:22px;padding:clamp(30px,4.6vw,60px)}
+.steps .mono{color:var(--amber);display:block;margin-bottom:16px}
+.steps h2{font-size:clamp(26px,3.6vw,40px);line-height:1.1;letter-spacing:-.035em;font-weight:600;margin:0 0 clamp(28px,4vw,48px);max-width:19ch}
+.slist{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.6vw,32px)}
+@media(max-width:900px){.slist{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.slist{grid-template-columns:1fr}}
+.st{border-top:1px solid var(--lite-2);padding-top:18px}
+.st .n{font-family:"DM Mono",monospace;font-size:12px;color:var(--amber);letter-spacing:.1em}
+.st h4{margin:12px 0 7px;font-size:18.5px;font-weight:600;letter-spacing:-.015em}
+.st p{margin:0;color:var(--lite);font-size:15px;line-height:1.5}
 
-.orter{display:flex;flex-wrap:wrap;gap:9px}
-.orter a{
-  text-decoration:none;border:1px solid var(--ink-30);border-radius:var(--r);
-  padding:9px 15px;font-size:15px;background:var(--paper-2);
-}
-.orter a:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+/* omdöme */
+.quote{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:clamp(28px,4.4vw,60px);max-width:900px}
+.stars{color:var(--amber);letter-spacing:3px;font-size:17px;margin-bottom:20px}
+.quote p{font-size:clamp(20px,2.7vw,29px);line-height:1.35;letter-spacing:-.02em;margin:0 0 22px;font-weight:500}
+.quote .who{color:var(--ink-60);font-size:15px}
 
-.quote{border-left:2px solid var(--tape);padding-left:22px;max-width:60ch}
-.quote p{font-size:clamp(19px,2.6vw,25px);line-height:1.35;letter-spacing:-.015em;margin:0 0 14px}
-.quote .mono{color:var(--ink-60)}
+/* orter */
+.orter{display:flex;flex-wrap:wrap;gap:10px}
+.orter a{text-decoration:none;background:var(--white);border:1px solid var(--line);border-radius:100px;
+  padding:11px 20px;font-size:15px;transition:.18s}
+.orter a:hover{background:var(--spruce);border-color:var(--spruce);color:var(--white)}
 
-footer{border-top:1.5px solid var(--ink);background:var(--paper-2);padding:44px 0 34px}
-.fgrid{display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between}
-.fgrid p{margin:0;color:var(--ink-60);font-size:14.5px;line-height:1.7}
-.fgrid a{color:var(--ink-60);text-decoration:none;display:block}
-.fgrid a:hover{color:var(--ink)}
+/* slut-cta */
+.final{background:var(--spruce);color:var(--white);border-radius:22px;padding:clamp(34px,5.4vw,70px);
+  display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:space-between}
+.final h2{font-size:clamp(26px,3.6vw,42px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 12px;max-width:16ch}
+.final p{margin:0;color:var(--lite);max-width:42ch}
+.btn-lt{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--spruce);
+  text-decoration:none;border-radius:13px;padding:19px 30px;font-size:16.5px;font-weight:600;transition:.18s;white-space:nowrap}
+.btn-lt:hover{background:#EBA936;transform:translateY(-1px)}
 
-@media(prefers-reduced-motion:no-preference){
-  .pl-line,.pl-fill,.dim,.dim-t,.boxes{transition:all .32s cubic-bezier(.4,0,.2,1)}
-}
+footer{background:var(--spruce);color:var(--lite);margin-top:clamp(60px,8vw,110px);padding:clamp(44px,5vw,68px) 0 34px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr}}
+footer h5{margin:0 0 14px;color:var(--white);font-size:15px;font-weight:600}
+footer p{margin:0;font-size:14.5px;line-height:1.75}
+footer a{text-decoration:none;display:block;font-size:14.5px;line-height:2;transition:.18s}
+footer a:hover{color:var(--white)}
+.fbot{margin-top:clamp(34px,4vw,54px);padding-top:22px;border-top:1px solid var(--lite-2);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:13.5px}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header class="top">
+<header class="top">
+  <div class="wrap">
     <a class="logo" href="/"><b>4Y</b><span class="mono">Flytt &amp; Städ</span></a>
     <nav>
       <a href="/flytthjalp">Flytthjälp</a>
@@ -185,45 +219,47 @@ footer{border-top:1.5px solid var(--ink);background:var(--paper-2);padding:44px 
       <a href="/kontorsflytt">Kontorsflytt</a>
       <a href="/om-oss">Om oss</a>
     </nav>
-    <a class="tel" href="tel:+46700000000">016&#8209;000 00 00</a>
-  </header>
+    <a class="tel" href="tel:+46160000000">016&#8209;000 00 00</a>
+  </div>
+</header>
 
-  <div class="hero">
-    <p class="eyebrow mono">Eskilstuna · Västerås · Strängnäs · Kungsör <i>·</i> Reco Rekommenderad 3 år i rad</p>
-    <h1>Vad kostar flytten? <em>Svaret får du nu,</em> inte om ett dygn.</h1>
-    <p class="lede">Dra i reglaget så räknar vi fram ett pris för din bostad — med RUT-avdraget redan avdraget. Vill du ha en bindande offert tar det oss under 24 timmar.</p>
+<div class="hero">
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span><span class="mono">Reco Rekommenderad 3 år i rad</span></span>
+    <h1>Se vad flytten kostar <span class="hl">innan</span> ni ringer.</h1>
+    <p class="lede">Flytthjälp, flyttstädning och magasinering i Mälardalen. Ange bostadens storlek så räknar vi fram priset direkt — med RUT&#8209;avdraget avräknat.</p>
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap calc-shell">
   <div class="calc">
     <div class="calc-in">
       <div class="calc-head">
-        <span class="mono">Prisuppskattning</span>
-        <span class="mono">4 uppgifter</span>
+        <h2>Räkna ut ditt pris</h2>
+        <span class="mono">4 steg</span>
       </div>
 
       <div class="field">
-        <label for="yta">
-          <span>Hur stor är bostaden?</span>
+        <div class="lab">
+          <span>Bostadens storlek</span>
           <span class="val"><b id="ytaV">72</b> m²</span>
-        </label>
-        <input id="yta" type="range" min="20" max="220" step="1" value="72">
+        </div>
+        <input id="yta" type="range" min="20" max="220" step="1" value="72" aria-label="Bostadens storlek i kvadratmeter">
         <div class="scale"><span>20 m²</span><span>220 m²</span></div>
       </div>
 
       <div class="field">
-        <label><span>Hur långt ska ni flytta?</span></label>
+        <div class="lab"><span>Avstånd</span></div>
         <div class="seg" id="dist" role="group" aria-label="Avstånd">
           <button type="button" data-v="1" aria-pressed="true">Inom orten</button>
-          <button type="button" data-v="1.35" aria-pressed="false">Inom Mälardalen</button>
+          <button type="button" data-v="1.35" aria-pressed="false">Mälardalen</button>
           <button type="button" data-v="1.85" aria-pressed="false">Längre bort</button>
         </div>
       </div>
 
       <div class="field">
-        <label><span>Våning och hiss</span></label>
-        <div class="seg" id="vaning" role="group" aria-label="Våning">
+        <div class="lab"><span>Våning och hiss</span></div>
+        <div class="seg" id="vaning" role="group" aria-label="Våning och hiss">
           <button type="button" data-v="0" aria-pressed="true">Markplan</button>
           <button type="button" data-v="1" aria-pressed="false">Med hiss</button>
           <button type="button" data-v="2.4" aria-pressed="false">Utan hiss</button>
@@ -233,7 +269,7 @@ footer{border-top:1.5px solid var(--ink);background:var(--paper-2);padding:44px 
       <div class="field" style="margin-bottom:0">
         <label class="check" for="stad">
           <input id="stad" type="checkbox" checked>
-          <span class="t">Lägg till flyttstädning
+          <span class="t">Flyttstädning ingår
             <small>Vi lämnar den gamla bostaden godkänd för besiktning.</small>
           </span>
         </label>
@@ -242,44 +278,47 @@ footer{border-top:1.5px solid var(--ink);background:var(--paper-2);padding:44px 
 
     <div class="calc-out">
       <div class="plan">
-        <svg id="plan" viewBox="0 0 340 250" role="img" aria-labelledby="plantitle">
-          <title id="plantitle">Skalenlig skiss över bostadens yta</title>
-          <rect id="pfill" class="pl-fill" x="60" y="45" width="220" height="150"/>
-          <rect id="pline" class="pl-line" x="60" y="45" width="220" height="150"/>
+        <svg id="plan" viewBox="0 0 340 230" role="img" aria-labelledby="ptit">
+          <title id="ptit">Skalenlig skiss över bostadens yta</title>
+          <rect id="pfill" class="pl-fill" x="60" y="40" width="220" height="150" rx="3"/>
+          <rect id="pline" class="pl-line" x="60" y="40" width="220" height="150" rx="3"/>
           <g id="bx"></g>
-          <line id="dh" class="dim" x1="60" y1="212" x2="280" y2="212"/>
-          <line id="dh1" class="dim" x1="60" y1="206" x2="60" y2="218"/>
-          <line id="dh2" class="dim" x1="280" y1="206" x2="280" y2="218"/>
-          <text id="dht" class="dim-t" x="170" y="230" text-anchor="middle">9,8 m</text>
-          <line id="dv" class="dim" x1="44" y1="45" x2="44" y2="195"/>
-          <line id="dv1" class="dim" x1="38" y1="45" x2="50" y2="45"/>
-          <line id="dv2" class="dim" x1="38" y1="195" x2="50" y2="195"/>
-          <text id="dvt" class="dim-t" x="30" y="124" text-anchor="middle" transform="rotate(-90 30 124)">7,3 m</text>
+          <line id="dh" class="dim" x1="60" y1="206" x2="280" y2="206"/>
+          <line id="dh1" class="dim" x1="60" y1="201" x2="60" y2="211"/>
+          <line id="dh2" class="dim" x1="280" y1="201" x2="280" y2="211"/>
+          <text id="dht" class="dim-t" x="170" y="224" text-anchor="middle">9,8 m</text>
+          <line id="dv" class="dim" x1="44" y1="40" x2="44" y2="190"/>
+          <line id="dv1" class="dim" x1="39" y1="40" x2="49" y2="40"/>
+          <line id="dv2" class="dim" x1="39" y1="190" x2="49" y2="190"/>
+          <text id="dvt" class="dim-t" x="32" y="118" text-anchor="middle" transform="rotate(-90 32 118)">7,3 m</text>
         </svg>
       </div>
 
       <div class="price">
-        <div class="row"><span>Flytthjälp</span><span id="pFlytt">— kr</span></div>
-        <div class="row" id="rowStad"><span>Flyttstädning</span><span id="pStad">— kr</span></div>
-        <div class="row rut"><span>RUT&#8209;avdrag, 50 %</span><span id="pRut">— kr</span></div>
+        <div class="row"><span>Flytthjälp</span><span id="pFlytt">—</span></div>
+        <div class="row" id="rowStad"><span>Flyttstädning</span><span id="pStad">—</span></div>
+        <div class="row rut"><span>RUT&#8209;avdrag, 50 %</span><span id="pRut">—</span></div>
         <div class="row tot">
           <span class="lbl">Att betala</span>
           <span class="sum" id="pTot">—</span>
         </div>
-        <p class="note">Uppskattning baserad på <span id="nBox">45</span> flyttkartonger och normal möblering. Priset bekräftas efter en kostnadsfri genomgång.</p>
+        <p class="note">Uppskattning för normal möblering, cirka <span id="nBox">45</span> flyttkartonger. Fast pris får ni efter en kostnadsfri genomgång.</p>
       </div>
 
-      <button class="cta" type="button">Få bindande offert inom 24 h</button>
+      <button class="cta" type="button">
+        Få bindande offert inom 24 h
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </div>
 </div>
 
-<div class="band">
+<div class="trust">
   <div class="wrap">
-    <div><b>4,3 / 5</b><span>på Reco, 50 omdömen</span></div>
-    <div><b>2021</b><span>i branschen sedan</span></div>
-    <div><b>F&#8209;skatt</b><span>och full ansvarsförsäkring</span></div>
-    <div><b>24 h</b><span>till bindande offert</span></div>
+    <div class="stat"><span class="mono">Betyg</span><b>4,3 / 5</b><span>50 omdömen på Reco</span></div>
+    <div class="stat"><span class="mono">Erfarenhet</span><b>Sedan 2021</b><span>hundratals flyttar i Mälardalen</span></div>
+    <div class="stat"><span class="mono">Trygghet</span><b>F&#8209;skatt</b><span>och full ansvarsförsäkring</span></div>
+    <div class="stat"><span class="mono">Svarstid</span><b>Inom 24 h</b><span>till bindande offert</span></div>
   </div>
 </div>
 
@@ -287,81 +326,115 @@ footer{border-top:1.5px solid var(--ink);background:var(--paper-2);padding:44px 
   <section>
     <div class="sec-head">
       <span class="mono">Tjänster</span>
-      <h2>Ni behöver bara ringa ett samtal för hela flytten.</h2>
+      <h2 class="big">Hela flytten hos oss, från packning till besiktning.</h2>
+      <p>Ni behöver inte samordna flera företag. Vi tar hand om varje moment och ni har en kontaktperson genom hela flytten.</p>
     </div>
     <div class="grid3">
       <div class="card">
-        <span class="mono">01 — Flytthjälp</span>
-        <h3>Vi bär, kör och monterar</h3>
-        <p>Packning, bärhjälp, transport och montering av möbler på nya adressen. Vi tar med filtar, band och kartonger.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 21V12h6v9"/></svg></div>
+        <h3>Flytthjälp</h3>
+        <p>Packning, bärhjälp, transport och montering på nya adressen. Filtar, band och kartonger tar vi med.</p>
         <a href="/flytthjalp">Läs om flytthjälp →</a>
       </div>
       <div class="card">
-        <span class="mono">02 — Flyttstädning</span>
-        <h3>Godkänd vid besiktning</h3>
-        <p>Vi städar efter branschens checklista. Blir något anmärkt vid besiktningen kommer vi tillbaka utan extra kostnad.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M8 20V9l6-5 6 5v11"/><path d="M4 20V13l4-3"/></svg></div>
+        <h3>Flyttstädning</h3>
+        <p>Städning enligt branschens checklista. Anmärks något vid besiktningen kommer vi tillbaka utan extra kostnad.</p>
         <a href="/flyttstadning">Läs om flyttstädning →</a>
       </div>
       <div class="card">
-        <span class="mono">03 — Magasinering</span>
-        <h3>Förvaring mellan datumen</h3>
-        <p>Passar när tillträdet dröjer. Torrt och larmat utrymme, och vi hämtar och lämnar när ni säger till.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 12h18M8 7V4h8v3"/></svg></div>
+        <h3>Magasinering</h3>
+        <p>För glappet mellan tillträdesdatumen. Torrt och larmat utrymme, och vi hämtar och lämnar när ni säger till.</p>
         <a href="/magasinering">Läs om magasinering →</a>
       </div>
     </div>
   </section>
 
   <section style="padding-top:0">
-    <div class="sec-head">
-      <span class="mono">Så går det till</span>
-      <h2>Fyra steg, och ni vet hela tiden vad som händer.</h2>
-    </div>
     <div class="steps">
-      <div class="step"><span class="n">Steg 1</span><h4>Genomgång av bohaget</h4><p>Vi går igenom rum för rum, på plats eller via video, och räknar volym och antal fordon.</p></div>
-      <div class="step"><span class="n">Steg 2</span><h4>Bindande offert</h4><p>Ni får ett fast pris med RUT&#8209;avdraget avräknat. Inga tillägg tillkommer efteråt.</p></div>
-      <div class="step"><span class="n">Steg 3</span><h4>Flyttdagen</h4><p>Teamet kommer på utsatt tid. Ni har ett namn och ett telefonnummer att nå hela dagen.</p></div>
-      <div class="step"><span class="n">Steg 4</span><h4>Städning och nycklar</h4><p>Vi städar den gamla bostaden och ni lämnar nycklarna med besiktningen avklarad.</p></div>
+      <span class="mono">Så går det till</span>
+      <h2>Fyra steg. Ni vet hela tiden vad som händer härnäst.</h2>
+      <div class="slist">
+        <div class="st"><span class="n">STEG 1</span><h4>Genomgång</h4><p>Vi går igenom bohaget rum för rum, på plats eller via video, och räknar volym och antal fordon.</p></div>
+        <div class="st"><span class="n">STEG 2</span><h4>Fast pris</h4><p>Ni får en bindande offert med RUT&#8209;avdraget avräknat. Inga tillägg tillkommer efteråt.</p></div>
+        <div class="st"><span class="n">STEG 3</span><h4>Flyttdagen</h4><p>Teamet kommer på utsatt tid. Ni har ett namn och ett nummer att nå hela dagen.</p></div>
+        <div class="st"><span class="n">STEG 4</span><h4>Städ och nycklar</h4><p>Vi städar den gamla bostaden så att ni kan lämna nycklarna med besiktningen avklarad.</p></div>
+      </div>
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="quote">
-      <p>”Flyttkillarna var i tid, varsamma med våra ägodelar och själva flytten gick snabbt. Städaren gjorde det lilla extra.”</p>
-      <span class="mono">Omdöme på Reco, februari 2025</span>
+      <div class="stars">★★★★★</div>
+      <p>”Flyttkillarna var i tid, varsamma med våra ägodelar och själva flytten gick snabbt. Flyttstädningen var noggrant utförd, ända in i detaljerna.”</p>
+      <div class="who">Omdöme på Reco &nbsp;·&nbsp; februari 2025</div>
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="sec-head">
-      <span class="mono">Orter</span>
-      <h2>Var ska ni flytta?</h2>
+      <span class="mono">Upptagningsområde</span>
+      <h2 class="big">Var ska ni flytta?</h2>
+      <p>Vi arbetar i hela Mälardalen. Välj er ort så ser ni priser, restider och vad som gäller just där.</p>
     </div>
     <div class="orter">
-      <a href="/flyttfirma-eskilstuna">Flyttfirma Eskilstuna</a>
-      <a href="/flyttfirma-vasteras">Flyttfirma Västerås</a>
-      <a href="/flyttfirma-strangnas">Flyttfirma Strängnäs</a>
-      <a href="/flyttfirma-kungsor">Flyttfirma Kungsör</a>
-      <a href="/flyttfirma-torshalla">Flyttfirma Torshälla</a>
-      <a href="/flyttfirma-orebro">Flyttfirma Örebro</a>
-      <a href="/flyttfirma-katrineholm">Flyttfirma Katrineholm</a>
-      <a href="/flyttfirma-nykoping">Flyttfirma Nyköping</a>
+      <a href="/flyttfirma-eskilstuna">Eskilstuna</a>
+      <a href="/flyttfirma-vasteras">Västerås</a>
+      <a href="/flyttfirma-strangnas">Strängnäs</a>
+      <a href="/flyttfirma-kungsor">Kungsör</a>
+      <a href="/flyttfirma-torshalla">Torshälla</a>
+      <a href="/flyttfirma-orebro">Örebro</a>
+      <a href="/flyttfirma-katrineholm">Katrineholm</a>
+      <a href="/flyttfirma-nykoping">Nyköping</a>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="final">
+      <div>
+        <h2>Redo att boka flytten?</h2>
+        <p>Berätta datum och adress så återkommer vi med ett fast pris inom ett dygn.</p>
+      </div>
+      <a class="btn-lt" href="/kontakt">Begär offert
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </section>
 </div>
 
 <footer>
-  <div class="wrap fgrid">
-    <p><b>4Y Flytt &amp; Städ Sverige AB</b><br>Hejargatan 2, 632 29 Eskilstuna<br>Org.nr 559328&#8209;5108 · Godkänd för F&#8209;skatt</p>
-    <p><a href="/flytthjalp">Flytthjälp</a><a href="/flyttstadning">Flyttstädning</a><a href="/magasinering">Magasinering</a><a href="/kontorsflytt">Kontorsflytt</a></p>
-    <p><a href="tel:+46700000000">016&#8209;000 00 00</a><a href="mailto:info@4yflytt.se">info@4yflytt.se</a><a href="/kontakt">Kontakt och offert</a></p>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h5>4Y Flytt &amp; Städ Sverige AB</h5>
+        <p>Hejargatan 2, 632 29 Eskilstuna<br>Org.nr 559328&#8209;5108<br>Godkänd för F&#8209;skatt · Ansvarsförsäkring</p>
+      </div>
+      <div>
+        <h5>Tjänster</h5>
+        <a href="/flytthjalp">Flytthjälp</a>
+        <a href="/flyttstadning">Flyttstädning</a>
+        <a href="/magasinering">Magasinering</a>
+        <a href="/kontorsflytt">Kontorsflytt</a>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <a href="tel:+46160000000">016&#8209;000 00 00</a>
+        <a href="mailto:info@4yflytt.se">info@4yflytt.se</a>
+        <a href="/kontakt">Begär offert</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 4Y Flytt &amp; Städ Sverige AB</span>
+      <span>Integritetspolicy · Villkor</span>
+    </div>
   </div>
 </footer>
 
 <script>
 (function(){
   var yta=document.getElementById('yta'), ytaV=document.getElementById('ytaV'),
-      stad=document.getElementById('stad'),
-      kDist=1, kVan=0;
+      stad=document.getElementById('stad'), kDist=1, kVan=0;
 
   function segs(id,set){
     var g=document.getElementById(id);
@@ -374,60 +447,56 @@ footer{border-top:1.5px solid var(--ink);background:var(--paper-2);padding:44px 
   segs('dist',function(v){kDist=v;});
   segs('vaning',function(v){kVan=v;});
 
-  function kr(n){ return Math.round(n/50)*50; }
-  function fmt(n){ return n.toLocaleString('sv-SE')+' kr'; }
+  function kr(n){return Math.round(n/50)*50;}
+  function fmt(n){return n.toLocaleString('sv-SE')+' kr';}
 
   function calc(){
-    var m2=+yta.value;
-    ytaV.textContent=m2;
+    var m2=+yta.value; ytaV.textContent=m2;
 
-    // pris
-    var flytt = kr((2400 + m2*118) * kDist + kVan*m2*11);
-    var st    = stad.checked ? kr(1200 + m2*42) : 0;
-    var rut   = Math.round((flytt+st)*0.5);
-    var tot   = flytt+st-rut;
+    var flytt=kr((2400+m2*118)*kDist + kVan*m2*11);
+    var st = stad.checked ? kr(1200+m2*42) : 0;
+    var rut=Math.round((flytt+st)*0.5);
 
     document.getElementById('pFlytt').textContent=fmt(flytt);
     document.getElementById('pStad').textContent = st ? fmt(st) : 'ingår ej';
     document.getElementById('rowStad').style.opacity = st ? 1 : .45;
     document.getElementById('pRut').textContent='− '+fmt(rut);
-    document.getElementById('pTot').textContent=fmt(tot);
+    document.getElementById('pTot').textContent=fmt(flytt+st-rut);
     document.getElementById('nBox').textContent=Math.round(m2*0.62);
 
-    // ritning: skalenlig rektangel, förhållande 4:3
-    var s = Math.sqrt(m2/220);                 // 0..1
-    var w = 92 + 188*s, h = w*0.68;
-    var x = 170 - w/2, y = 128 - h/2;
-    var mB = Math.sqrt(m2*1.47), mH = m2/mB;   // meter
+    var s=Math.sqrt(m2/220), w=96+184*s, h=w*0.66,
+        x=170-w/2, y=115-h/2,
+        mB=Math.sqrt(m2*1.5), mH=m2/mB;
 
-    set('pfill',x,y,w,h); set('pline',x,y,w,h);
+    box('pfill',x,y,w,h); box('pline',x,y,w,h);
 
-    var dy=y+h+22;
+    var dy=y+h+20;
     at('dh',{x1:x,y1:dy,x2:x+w,y2:dy});
-    at('dh1',{x1:x,y1:dy-6,x2:x,y2:dy+6});
-    at('dh2',{x1:x+w,y1:dy-6,x2:x+w,y2:dy+6});
+    at('dh1',{x1:x,y1:dy-5,x2:x,y2:dy+5});
+    at('dh2',{x1:x+w,y1:dy-5,x2:x+w,y2:dy+5});
     var t=document.getElementById('dht');
-    t.setAttribute('x',x+w/2); t.setAttribute('y',dy+18);
+    t.setAttribute('x',x+w/2); t.setAttribute('y',dy+17);
     t.textContent=mB.toFixed(1).replace('.',',')+' m';
 
-    var dx=x-20;
+    var dx=x-18;
     at('dv',{x1:dx,y1:y,x2:dx,y2:y+h});
-    at('dv1',{x1:dx-6,y1:y,x2:dx+6,y2:y});
-    at('dv2',{x1:dx-6,y1:y+h,x2:dx+6,y2:y+h});
+    at('dv1',{x1:dx-5,y1:y,x2:dx+5,y2:y});
+    at('dv2',{x1:dx-5,y1:y+h,x2:dx+5,y2:y+h});
     var v=document.getElementById('dvt');
-    v.setAttribute('x',dx-10); v.setAttribute('y',y+h/2);
-    v.setAttribute('transform','rotate(-90 '+(dx-10)+' '+(y+h/2)+')');
+    v.setAttribute('x',dx-11); v.setAttribute('y',y+h/2);
+    v.setAttribute('transform','rotate(-90 '+(dx-11)+' '+(y+h/2)+')');
     v.textContent=mH.toFixed(1).replace('.',',')+' m';
 
-    // kartonger i planen
-    var n=Math.max(3,Math.round(m2/9)), g='', cols=Math.ceil(Math.sqrt(n*1.5)), sz=Math.min(13,(w-24)/cols-3);
+    var n=Math.max(3,Math.round(m2/10)), g='',
+        cols=Math.ceil(Math.sqrt(n*1.5)), sz=Math.min(12,(w-22)/cols-3);
     for(var i=0;i<n;i++){
       var c=i%cols, r=Math.floor(i/cols);
-      g+='<rect class="boxes" x="'+(x+12+c*(sz+3))+'" y="'+(y+12+r*(sz+3))+'" width="'+sz+'" height="'+sz+'" rx="1"/>';
+      g+='<rect class="boxes" x="'+(x+11+c*(sz+3))+'" y="'+(y+11+r*(sz+3))+'" width="'+sz+'" height="'+sz+'" rx="1.5"/>';
     }
     document.getElementById('bx').innerHTML=g;
   }
-  function set(id,x,y,w,h){var e=document.getElementById(id);e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('width',w);e.setAttribute('height',h);}
+  function box(id,x,y,w,h){var e=document.getElementById(id);
+    e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('width',w);e.setAttribute('height',h);}
   function at(id,o){var e=document.getElementById(id);for(var k in o)e.setAttribute(k,o[k]);}
 
   yta.addEventListener('input',calc);
