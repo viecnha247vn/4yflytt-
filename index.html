@@ -3,15 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>4Y Flytt &amp; Städ — Flyttfirma i Mälardalen | Se priset direkt</title>
-<meta name="description" content="Flytthjälp, flyttstädning och magasinering i Mälardalen. Se ditt pris direkt på sidan med RUT-avdraget avräknat. Reco Rekommenderad tre år i rad.">
+<title>4Y Flytt &amp; Städ — Flyttfirma i Mälardalen och hela Sverige</title>
+<meta name="description" content="Pålitligt flyttföretag med professionella flytt- och städtjänster i hela Sverige. Försäkrade upp till 10 MSEK, RUT-avdrag och kostnadsfri offert inom 24 timmar.">
+<link rel="canonical" href="https://4yflytt.se/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:site_name" content="4Y Flytt &amp; Städ">
+<meta property="og:title" content="4Y Flytt &amp; Städ — Flyttfirma i Mälardalen och hela Sverige">
+<meta property="og:description" content="Pålitligt flyttföretag med professionella flytt- och städtjänster i hela Sverige. Försäkrade upp till 10 MSEK, RUT-avdrag och kostnadsfri offert inom 24 timmar.">
+<meta property="og:url" content="https://4yflytt.se/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --spruce:#0E2E26;
   --spruce-2:#164036;
+  --spruce-3:#0A241E;
   --bone:#F6F5F1;
   --white:#FFFFFF;
   --amber:#D99423;
@@ -20,88 +29,139 @@
   --ink-40:rgba(18,33,29,.40);
   --ink-10:rgba(18,33,29,.10);
   --line:rgba(18,33,29,.12);
-  --lite:rgba(255,255,255,.62);
+  --lite:rgba(255,255,255,.66);
   --lite-2:rgba(255,255,255,.16);
   --sh:0 1px 2px rgba(14,46,38,.05), 0 12px 34px -10px rgba(14,46,38,.14);
-  --sh-lg:0 2px 4px rgba(14,46,38,.06), 0 30px 70px -20px rgba(14,46,38,.28);
+  --sh-lg:0 2px 4px rgba(14,46,38,.06), 0 30px 70px -20px rgba(14,46,38,.30);
   --pad:clamp(20px,5vw,60px);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bone);color:var(--ink);
+body{margin:0;background:var(--bone);color:var(--ink);
   font-family:"Familjen Grotesk",system-ui,sans-serif;
-  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
-}
-img{max-width:100%}
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-button,input,select{font:inherit;color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
 .mono{font-family:"DM Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-/* ============ topp ============ */
-.top{position:sticky;top:0;z-index:40;background:var(--spruce);color:var(--white)}
+/* ============ GLAS / SPEGEL ============ */
+.glass{
+  background:rgba(255,255,255,.07);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
+  backdrop-filter:blur(20px) saturate(150%);
+  border:1px solid rgba(255,255,255,.14);
+  position:relative;
+}
+.glass::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(170deg,rgba(255,255,255,.22),rgba(255,255,255,.03) 34%,transparent 62%);
+}
+.glass-lt{
+  background:rgba(255,255,255,.74);
+  -webkit-backdrop-filter:blur(26px) saturate(170%);
+  backdrop-filter:blur(26px) saturate(170%);
+  border:1px solid rgba(255,255,255,.85);
+  position:relative;
+}
+.glass-lt::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.85),rgba(255,255,255,.18) 30%,transparent 58%);
+}
+.glass>*,.glass-lt>*{position:relative;z-index:1}
+.sheen{position:relative;overflow:hidden}
+.sheen::after{
+  content:"";position:absolute;top:0;left:-140%;width:60%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.34),transparent);
+  transform:skewX(-18deg);transition:left .75s cubic-bezier(.22,.7,.3,1);
+}
+.sheen:hover::after{left:150%}
+
+/* ============ TOPP ============ */
+.top{position:sticky;top:0;z-index:60;
+  background:rgba(14,46,38,.72);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  backdrop-filter:blur(20px) saturate(160%);
+  border-bottom:1px solid rgba(255,255,255,.10);color:var(--white)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;height:70px}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
 .logo b{font-size:22px;font-weight:700;letter-spacing:-.03em}
 .logo .mono{color:var(--lite);font-size:10.5px}
-.top nav{display:flex;gap:30px;font-size:15.5px}
+.top nav{display:flex;gap:28px;font-size:15.5px}
 .top nav a{color:var(--lite);text-decoration:none;transition:color .18s}
-.top nav a:hover{color:var(--white)}
+.top nav a:hover,.top nav a[aria-current=page]{color:var(--white)}
 .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:15.5px;
-     border:1px solid var(--lite-2);border-radius:100px;padding:9px 18px;transition:.18s}
+  border:1px solid var(--lite-2);border-radius:100px;padding:9px 18px;transition:.18s;
+  background:rgba(255,255,255,.06)}
 .tel:hover{background:var(--white);color:var(--spruce);border-color:var(--white)}
-@media(max-width:960px){.top nav{display:none}}
+@media(max-width:1000px){.top nav{display:none}}
 
-/* ============ hero ============ */
-.hero{background:var(--spruce);color:var(--white);padding:clamp(48px,7vw,92px) 0 clamp(150px,17vw,220px);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-14%;top:-32%;width:62%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(217,148,35,.16),transparent 62%);pointer-events:none}
-.hero .wrap{position:relative;z-index:1}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--lite-2);border-radius:100px;
-  padding:7px 16px 7px 12px;margin-bottom:clamp(24px,3.4vw,34px);color:var(--lite)}
-.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none}
-h1{font-size:clamp(38px,6.6vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:600;
-   margin:0 0 24px;max-width:17ch}
+/* ============ HERO ============ */
+.hero{background:var(--spruce);color:var(--white);position:relative;overflow:hidden;
+  padding:clamp(46px,6.6vw,86px) 0 clamp(52px,7vw,92px)}
+.hero.tall{padding-bottom:clamp(150px,17vw,220px)}
+.hero::after{content:"";position:absolute;right:-16%;top:-38%;width:66%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,148,35,.20),transparent 62%);pointer-events:none}
+.hero::before{content:"";position:absolute;left:-10%;bottom:-46%;width:52%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(120,220,180,.14),transparent 64%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.crumb{color:var(--lite);font-size:14px;margin:0 0 22px}
+.crumb a{text-decoration:none}
+.crumb a:hover{color:var(--white)}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:100px;
+  padding:7px 16px 7px 12px;margin-bottom:clamp(22px,3.2vw,32px);color:var(--lite)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none;
+  box-shadow:0 0 0 4px rgba(217,148,35,.18)}
+h1{font-size:clamp(36px,6.2vw,74px);line-height:1.03;letter-spacing:-.035em;font-weight:600;
+  margin:0 0 24px;max-width:17ch}
 h1 .hl{color:var(--amber)}
-.lede{font-size:clamp(17px,1.9vw,20.5px);line-height:1.55;color:var(--lite);max-width:50ch;margin:0}
+.hero.sub h1{font-size:clamp(33px,5vw,58px);max-width:19ch}
+.lede{font-size:clamp(17px,1.9vw,20.5px);line-height:1.55;color:var(--lite);max-width:52ch;margin:0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 
-/* ============ kalkyl ============ */
-.calc-shell{margin-top:clamp(-130px,-14vw,-180px);position:relative;z-index:5}
-.calc{display:grid;grid-template-columns:1.02fr .98fr;
-  background:var(--white);border-radius:18px;box-shadow:var(--sh-lg);overflow:hidden}
+/* ============ KNAPPAR ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+  border:0;border-radius:13px;padding:17px 28px;font-size:16.5px;font-weight:500;cursor:pointer;transition:.18s}
+.btn-amber{background:var(--amber);color:var(--spruce);font-weight:600}
+.btn-amber:hover{background:#EBA936;transform:translateY(-1px)}
+.btn-dark{background:var(--spruce);color:var(--white)}
+.btn-dark:hover{background:var(--spruce-2);transform:translateY(-1px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--white);border:1px solid var(--lite-2);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--amber);outline-offset:3px}
+
+/* ============ KALKYL ============ */
+.calc-shell{margin-top:clamp(-130px,-14vw,-180px);position:relative;z-index:20}
+.calc{display:grid;grid-template-columns:1.02fr .98fr;border-radius:20px;box-shadow:var(--sh-lg);overflow:hidden;
+  background:var(--white)}
 @media(max-width:900px){.calc{grid-template-columns:1fr}}
 .calc-in{padding:clamp(24px,3.4vw,40px)}
-.calc-out{padding:clamp(24px,3.4vw,40px);background:linear-gradient(180deg,#FAFAF8,#F2F3EF);
+.calc-out{padding:clamp(24px,3.4vw,40px);background:linear-gradient(180deg,#FAFAF8,#F1F2EE);
   border-left:1px solid var(--line);display:flex;flex-direction:column;gap:22px}
 @media(max-width:900px){.calc-out{border-left:0;border-top:1px solid var(--line)}}
 .calc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
 .calc-head h2{font-size:20px;font-weight:600;letter-spacing:-.02em;margin:0}
 .calc-head .mono{color:var(--ink-40)}
-
 .field{margin-bottom:26px}
 .field>.lab{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .field .lab span:first-child{font-size:15.5px;font-weight:500}
 .field .val{color:var(--ink-60);font-size:14px}
 .field .val b{font-family:"DM Mono",monospace;font-size:19px;font-weight:500;color:var(--ink)}
-
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:100px;
   background:var(--ink-10);margin:6px 0 8px}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
   background:var(--white);border:1px solid var(--line);box-shadow:var(--sh);cursor:grab}
 input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--white);
   border:1px solid var(--line);box-shadow:var(--sh);cursor:grab}
-input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:6px}
-.scale{display:flex;justify-content:space-between;color:var(--ink-40);
-  font-family:"DM Mono",monospace;font-size:11px}
-
+.scale{display:flex;justify-content:space-between;color:var(--ink-40);font-family:"DM Mono",monospace;font-size:11px}
 .seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
 .seg button{background:var(--white);border:1px solid var(--line);border-radius:11px;padding:13px 8px;
   cursor:pointer;font-size:14.5px;line-height:1.25;transition:.18s;text-align:center}
 .seg button:hover{border-color:var(--ink-40)}
 .seg button[aria-pressed=true]{background:var(--spruce);border-color:var(--spruce);color:var(--white)}
-.seg button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-
 .check{display:flex;align-items:flex-start;gap:13px;border:1px solid var(--line);border-radius:13px;
   padding:16px;cursor:pointer;background:var(--white);transition:.18s}
 .check:hover{border-color:var(--ink-40)}
@@ -109,48 +169,50 @@ input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:6p
 .check .t{font-size:15px;line-height:1.4;font-weight:500}
 .check .t small{display:block;color:var(--ink-60);font-size:13.5px;font-weight:400;margin-top:2px}
 .check:has(input:checked){border-color:var(--spruce);background:rgba(14,46,38,.035)}
-
-/* ---- ritning ---- */
 .plan{flex:1;min-height:190px;display:grid;place-items:center}
 .plan svg{width:100%;height:auto;max-height:230px;overflow:visible}
 .pl-fill{fill:rgba(14,46,38,.06)}
-.pl-line{fill:none;stroke:var(--spruce);stroke-width:1.5;rx:3}
+.pl-line{fill:none;stroke:var(--spruce);stroke-width:1.5}
 .dim{stroke:var(--ink-40);stroke-width:1}
 .dim-t{fill:var(--ink-60);font-family:"DM Mono",monospace;font-size:11px}
-.boxes{fill:var(--spruce);opacity:.28}
-
+.boxes{fill:var(--spruce);opacity:.26}
 .price{border-top:1px solid var(--line);padding-top:20px}
 .row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;font-size:15px;color:var(--ink-60)}
 .row span:last-child{font-family:"DM Mono",monospace;font-size:14.5px;color:var(--ink)}
-.row.rut span{color:#2E7D52}
+.row.rut span:last-child{color:#2E7D52}
 .row.tot{margin-top:12px;padding-top:18px;border-top:1px solid var(--line);align-items:flex-end}
 .row.tot .lbl{font-size:16px;color:var(--ink);font-weight:500}
-.sum{font-size:clamp(30px,4.2vw,42px)!important;font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--ink)!important}
+.sum{font-size:clamp(30px,4.2vw,42px)!important;font-weight:500;letter-spacing:-.03em;line-height:1}
 .note{color:var(--ink-40);font-size:12.5px;line-height:1.5;margin:14px 0 0}
-
 .cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;text-decoration:none;
   background:var(--spruce);color:var(--white);border:0;border-radius:13px;padding:19px;
   font-size:16.5px;font-weight:500;cursor:pointer;transition:.18s}
-.cta:hover{background:var(--spruce-2);transform:translateY(-1px)}
-.cta:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.cta:hover{background:var(--spruce-2)}
 
-/* ============ trust ============ */
+/* ============ TRUST ============ */
 .trust{padding:clamp(44px,6vw,72px) 0 0}
 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,40px)}
 @media(max-width:820px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:28px}}
-.stat b{display:block;font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.stat b{display:block;font-size:clamp(25px,3.2vw,35px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
 .stat span{display:block;color:var(--ink-60);font-size:14.5px;margin-top:5px}
 .stat .mono{color:var(--amber);margin-bottom:9px}
+.trust-glass{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+@media(max-width:820px){.trust-glass{grid-template-columns:repeat(2,1fr)}}
+.tg{border-radius:15px;padding:20px}
+.tg b{display:block;font-size:22px;font-weight:600;letter-spacing:-.02em;color:var(--white)}
+.tg span{display:block;color:var(--lite);font-size:14px;margin-top:4px}
 
-/* ============ sektioner ============ */
+/* ============ SEKTIONER ============ */
 section{padding:clamp(60px,8vw,110px) 0}
+.pt0{padding-top:0}
 .sec-head{max-width:62ch;margin-bottom:clamp(30px,4vw,46px)}
 .sec-head .mono{color:var(--amber);display:block;margin-bottom:16px}
-h2.big{font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 14px;max-width:20ch}
-.sec-head p{margin:0;color:var(--ink-60);font-size:17px;max-width:52ch}
+h2.big{font-size:clamp(27px,3.8vw,44px);line-height:1.09;letter-spacing:-.035em;font-weight:600;margin:0 0 14px;max-width:21ch}
+.sec-head p{margin:0;color:var(--ink-60);font-size:17px;max-width:54ch}
 
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:900px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:900px){.grid3,.grid2{grid-template-columns:1fr}}
 .card{background:var(--white);border:1px solid var(--line);border-radius:16px;
   padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:13px;transition:.2s}
 .card:hover{box-shadow:var(--sh);transform:translateY(-3px)}
@@ -161,23 +223,76 @@ h2.big{font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.035em;fo
 .card a{color:var(--spruce);text-decoration:none;font-size:15.5px;font-weight:500}
 .card a:hover{color:var(--amber)}
 
+/* prosa */
+.prose{max-width:70ch}
+.prose h2{font-size:clamp(24px,3vw,33px);line-height:1.15;letter-spacing:-.03em;font-weight:600;margin:44px 0 14px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:20px;font-weight:600;letter-spacing:-.02em;margin:30px 0 10px}
+.prose p{margin:0 0 16px;color:var(--ink-60)}
+.prose strong{color:var(--ink);font-weight:600}
+.cols{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:940px){.cols{grid-template-columns:1fr}}
+
+/* checklista */
+.ticks{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:11px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-60);font-size:16px}
+.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;
+  background:rgba(46,125,82,.12) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E7D52' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>") center/12px no-repeat}
+.ticks.two{grid-template-columns:1fr 1fr}
+@media(max-width:700px){.ticks.two{grid-template-columns:1fr}}
+
+/* sidopanel */
+.aside{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px;
+  position:sticky;top:96px;box-shadow:var(--sh)}
+.aside h4{margin:0 0 6px;font-size:19px;font-weight:600;letter-spacing:-.02em}
+.aside p{margin:0 0 18px;color:var(--ink-60);font-size:15px}
+.aside .btn{width:100%}
+.aside hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+.aside .mono{color:var(--ink-40);display:block;margin-bottom:8px}
+
+/* pris-tabell */
+.ptab{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;font-size:15.5px;margin:6px 0 14px}
+.ptab th{background:var(--spruce);color:var(--white);text-align:left;padding:14px 18px;font-weight:500;font-size:14.5px}
+.ptab td{border-top:1px solid var(--line);padding:13px 18px;color:var(--ink-60)}
+.ptab td:first-child{color:var(--ink)}
+.ptab td:last-child{font-family:"DM Mono",monospace;font-size:14.5px;color:var(--ink);white-space:nowrap}
+
 /* steg */
-.steps{background:var(--spruce);color:var(--white);border-radius:22px;padding:clamp(30px,4.6vw,60px)}
+.steps{background:var(--spruce);color:var(--white);border-radius:24px;padding:clamp(30px,4.6vw,60px);
+  position:relative;overflow:hidden}
+.steps::after{content:"";position:absolute;right:-12%;top:-46%;width:52%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,148,35,.16),transparent 62%)}
+.steps>*{position:relative;z-index:1}
 .steps .mono{color:var(--amber);display:block;margin-bottom:16px}
-.steps h2{font-size:clamp(26px,3.6vw,40px);line-height:1.1;letter-spacing:-.035em;font-weight:600;margin:0 0 clamp(28px,4vw,48px);max-width:19ch}
-.slist{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.6vw,32px)}
+.steps h2{font-size:clamp(25px,3.4vw,39px);line-height:1.1;letter-spacing:-.035em;font-weight:600;
+  margin:0 0 clamp(28px,4vw,48px);max-width:19ch}
+.slist{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 @media(max-width:900px){.slist{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.slist{grid-template-columns:1fr}}
-.st{border-top:1px solid var(--lite-2);padding-top:18px}
-.st .n{font-family:"DM Mono",monospace;font-size:12px;color:var(--amber);letter-spacing:.1em}
-.st h4{margin:12px 0 7px;font-size:18.5px;font-weight:600;letter-spacing:-.015em}
-.st p{margin:0;color:var(--lite);font-size:15px;line-height:1.5}
+.st{border-radius:15px;padding:20px}
+.st .n{font-family:"DM Mono",monospace;font-size:11.5px;color:var(--amber);letter-spacing:.12em}
+.st h4{margin:11px 0 7px;font-size:18px;font-weight:600;letter-spacing:-.015em;color:var(--white)}
+.st p{margin:0;color:var(--lite);font-size:14.5px;line-height:1.5}
 
 /* omdöme */
-.quote{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:clamp(28px,4.4vw,60px);max-width:900px}
+.quote{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:clamp(28px,4.4vw,58px);max-width:900px}
 .stars{color:var(--amber);letter-spacing:3px;font-size:17px;margin-bottom:20px}
-.quote p{font-size:clamp(20px,2.7vw,29px);line-height:1.35;letter-spacing:-.02em;margin:0 0 22px;font-weight:500}
+.quote p{font-size:clamp(19px,2.5vw,28px);line-height:1.35;letter-spacing:-.02em;margin:0 0 22px;font-weight:500}
 .quote .who{color:var(--ink-60);font-size:15px}
+
+/* faq */
+.faq{max-width:78ch}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:19px 24px;font-size:17px;font-weight:500;
+  display:flex;justify-content:space-between;gap:20px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"DM Mono",monospace;color:var(--amber);font-size:21px;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{border-bottom:1px solid var(--line)}
+.faq .a{padding:18px 24px 22px;color:var(--ink-60);font-size:16px}
+.faq .a p{margin:0 0 12px}
+.faq .a p:last-child{margin:0}
 
 /* orter */
 .orter{display:flex;flex-wrap:wrap;gap:10px}
@@ -185,18 +300,31 @@ h2.big{font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.035em;fo
   padding:11px 20px;font-size:15px;transition:.18s}
 .orter a:hover{background:var(--spruce);border-color:var(--spruce);color:var(--white)}
 
-/* slut-cta */
-.final{background:var(--spruce);color:var(--white);border-radius:22px;padding:clamp(34px,5.4vw,70px);
-  display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:space-between}
-.final h2{font-size:clamp(26px,3.6vw,42px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 12px;max-width:16ch}
+/* final cta */
+.final{background:var(--spruce);color:var(--white);border-radius:24px;padding:clamp(34px,5.4vw,68px);
+  display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:space-between;
+  position:relative;overflow:hidden}
+.final::after{content:"";position:absolute;left:-8%;bottom:-70%;width:46%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,148,35,.18),transparent 64%)}
+.final>*{position:relative;z-index:1}
+.final h2{font-size:clamp(25px,3.4vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin:0 0 12px;max-width:16ch}
 .final p{margin:0;color:var(--lite);max-width:42ch}
-.btn-lt{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--spruce);
-  text-decoration:none;border-radius:13px;padding:19px 30px;font-size:16.5px;font-weight:600;transition:.18s;white-space:nowrap}
-.btn-lt:hover{background:#EBA936;transform:translateY(-1px)}
 
+/* formulär */
+.form{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3.4vw,40px);box-shadow:var(--sh)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:700px){.frow{grid-template-columns:1fr}}
+.fi label{display:block;font-size:14.5px;font-weight:500;margin-bottom:7px}
+.fi input,.fi select,.fi textarea{width:100%;border:1px solid var(--line);border-radius:11px;
+  padding:13px 15px;font-size:16px;background:var(--bone);transition:.18s}
+.fi input:focus,.fi select:focus,.fi textarea:focus{background:var(--white);border-color:var(--spruce);outline:none}
+.fi textarea{min-height:110px;resize:vertical}
+.fnote{color:var(--ink-40);font-size:13px;margin:14px 0 0}
+
+/* footer */
 footer{background:var(--spruce);color:var(--lite);margin-top:clamp(60px,8vw,110px);padding:clamp(44px,5vw,68px) 0 34px}
-.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
-@media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr}}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
 footer h5{margin:0 0 14px;color:var(--white);font-size:15px;font-weight:600}
 footer p{margin:0;font-size:14.5px;line-height:1.75}
 footer a{text-decoration:none;display:block;font-size:14.5px;line-height:2;transition:.18s}
@@ -205,58 +333,45 @@ footer a:hover{color:var(--white)}
   display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:13.5px}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .top{background:var(--spruce)}
+  .glass{background:rgba(255,255,255,.12)}
+  .glass-lt{background:rgba(255,255,255,.94)}
+}
+
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MovingCompany", "name": "4Y Flytt & Städ Sverige AB", "url": "https://4yflytt.se", "telephone": "+46102146353", "email": "info@4yflytt.se", "address": {"@type": "PostalAddress", "streetAddress": "Hejargatan 2", "postalCode": "632 29", "addressLocality": "Eskilstuna", "addressCountry": "SE"}, "areaServed": ["Stockholm", "Uppsala", "Västerås", "Eskilstuna", "Örebro", "Södertälje", "Köping", "Strängnäs", "Katrineholm", "Nyköping", "Arboga", "Hallstahammar"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "100", "bestRating": "5"}, "review": [{"@type": "Review", "author": {"@type": "Person", "name": "Maria Andersson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Fantastisk service! Flyttgänget var otroligt professionella och snabba. Allting gick smidigt och de var noga med att hantera våra saker varsamt."}, {"@type": "Review", "author": {"@type": "Person", "name": "Erik Johansson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Bästa flyttfirman jag anlitat. Punktliga, trevliga och effektiva. De hjälpte till med både packning och städning. Verkligen en helhetslösning!"}, {"@type": "Review", "author": {"@type": "Person", "name": "Anna Svensson"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Jättebra pris och utmärkt service. Killarna var starka och snabba, men ändå försiktiga med alla möbler. Flyttstädningen var perfekt!"}]}</script>
 </head>
 <body>
-
 <header class="top">
   <div class="wrap">
     <a class="logo" href="/"><b>4Y</b><span class="mono">Flytt &amp; Städ</span></a>
-    <nav>
-      <a href="/flytthjalp">Flytthjälp</a>
-      <a href="/flyttstadning">Flyttstädning</a>
-      <a href="/magasinering">Magasinering</a>
-      <a href="/kontorsflytt">Kontorsflytt</a>
-      <a href="/om-oss">Om oss</a>
-    </nav>
-    <a class="tel" href="tel:+46160000000">016&#8209;000 00 00</a>
+    <nav><a href="/flytthjalp">Flytthjälp</a><a href="/flyttstadning">Flyttstädning</a><a href="/nedpackning">Nedpackning</a><a href="/magasinering">Magasinering</a><a href="/foretagsflytt">Företagsflytt</a><a href="/om-oss">Om oss</a></nav>
+    <a class="tel" href="tel:+46102146353">010&#8209;214 63 53</a>
   </div>
 </header>
-
-<div class="hero">
-  <div class="wrap">
-    <span class="pill"><span class="dot"></span><span class="mono">Reco Rekommenderad 3 år i rad</span></span>
-    <h1>Se vad flytten kostar <span class="hl">innan</span> ni ringer.</h1>
-    <p class="lede">Flytthjälp, flyttstädning och magasinering i Mälardalen. Ange bostadens storlek så räknar vi fram priset direkt — med RUT&#8209;avdraget avräknat.</p>
-  </div>
-</div>
-
+<div class="hero tall"><div class="wrap">
+  <span class="pill glass"><span class="dot"></span><span class="mono">Reco Rekommenderad 2023 · 2024 · 2025</span></span>
+  <h1>Din trygghet vid <span class="hl">flytt &amp; städning</span>.</h1>
+  <p class="lede">Vi är ett pålitligt flyttföretag som erbjuder professionella flytt- och städtjänster i hela Sverige. Begär en kostnadsfri offert idag.</p>
+</div></div>
 <div class="wrap calc-shell">
   <div class="calc">
     <div class="calc-in">
-      <div class="calc-head">
-        <h2>Räkna ut ditt pris</h2>
-        <span class="mono">4 steg</span>
-      </div>
-
+      <div class="calc-head"><h2>Räkna ut ditt pris</h2><span class="mono">4 steg</span></div>
       <div class="field">
-        <div class="lab">
-          <span>Bostadens storlek</span>
-          <span class="val"><b id="ytaV">72</b> m²</span>
-        </div>
+        <div class="lab"><span>Bostadens storlek</span><span class="val"><b id="ytaV">72</b> m²</span></div>
         <input id="yta" type="range" min="20" max="220" step="1" value="72" aria-label="Bostadens storlek i kvadratmeter">
         <div class="scale"><span>20 m²</span><span>220 m²</span></div>
       </div>
-
       <div class="field">
         <div class="lab"><span>Avstånd</span></div>
         <div class="seg" id="dist" role="group" aria-label="Avstånd">
           <button type="button" data-v="1" aria-pressed="true">Inom orten</button>
-          <button type="button" data-v="1.35" aria-pressed="false">Mälardalen</button>
+          <button type="button" data-v="1.35" aria-pressed="false">Inom regionen</button>
           <button type="button" data-v="1.85" aria-pressed="false">Längre bort</button>
         </div>
       </div>
-
       <div class="field">
         <div class="lab"><span>Våning och hiss</span></div>
         <div class="seg" id="vaning" role="group" aria-label="Våning och hiss">
@@ -265,17 +380,12 @@ footer a:hover{color:var(--white)}
           <button type="button" data-v="2.4" aria-pressed="false">Utan hiss</button>
         </div>
       </div>
-
       <div class="field" style="margin-bottom:0">
-        <label class="check" for="stad">
-          <input id="stad" type="checkbox" checked>
-          <span class="t">Flyttstädning ingår
-            <small>Vi lämnar den gamla bostaden godkänd för besiktning.</small>
-          </span>
+        <label class="check" for="stad"><input id="stad" type="checkbox" checked>
+          <span class="t">Flyttstädning ingår<small>Städning som uppfyller kraven för godkänd slutbesiktning.</small></span>
         </label>
       </div>
     </div>
-
     <div class="calc-out">
       <div class="plan">
         <svg id="plan" viewBox="0 0 340 230" role="img" aria-labelledby="ptit">
@@ -293,135 +403,104 @@ footer a:hover{color:var(--white)}
           <text id="dvt" class="dim-t" x="32" y="118" text-anchor="middle" transform="rotate(-90 32 118)">7,3 m</text>
         </svg>
       </div>
-
       <div class="price">
         <div class="row"><span>Flytthjälp</span><span id="pFlytt">—</span></div>
         <div class="row" id="rowStad"><span>Flyttstädning</span><span id="pStad">—</span></div>
         <div class="row rut"><span>RUT&#8209;avdrag, 50 %</span><span id="pRut">—</span></div>
-        <div class="row tot">
-          <span class="lbl">Att betala</span>
-          <span class="sum" id="pTot">—</span>
-        </div>
-        <p class="note">Uppskattning för normal möblering, cirka <span id="nBox">45</span> flyttkartonger. Fast pris får ni efter en kostnadsfri genomgång.</p>
+        <div class="row tot"><span class="lbl">Att betala</span><span class="sum" id="pTot">—</span></div>
+        <p class="note">Uppskattning för normal möblering, cirka <span id="nBox">45</span> flyttkartonger. Exakt pris — fast pris eller timpris — får ni i den kostnadsfria offerten inom 24 timmar.</p>
       </div>
-
-      <button class="cta" type="button">
-        Få bindande offert inom 24 h
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
+      <a class="cta sheen" href="/kontakt">Få kostnadsfri offert inom 24 h<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </div>
 
-<div class="trust">
-  <div class="wrap">
-    <div class="stat"><span class="mono">Betyg</span><b>4,3 / 5</b><span>50 omdömen på Reco</span></div>
-    <div class="stat"><span class="mono">Erfarenhet</span><b>Sedan 2021</b><span>hundratals flyttar i Mälardalen</span></div>
-    <div class="stat"><span class="mono">Trygghet</span><b>F&#8209;skatt</b><span>och full ansvarsförsäkring</span></div>
-    <div class="stat"><span class="mono">Svarstid</span><b>Inom 24 h</b><span>till bindande offert</span></div>
+
+<div class="wrap"><section>
+  <div class="sec-head"><span class="mono">Varför välja oss</span>
+  <h2 class="big">Fyra saker ni ska kunna räkna med.</h2></div>
+  <div class="grid3" style="grid-template-columns:repeat(4,1fr)">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>Fullt försäkrade</h3><p>Alla tjänster är försäkrade upp till 10 MSEK hos Trygg-Hansa, för din trygghet.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1"/></svg></div>
+      <h3>Professionella</h3><p>Utbildad och erfaren personal på varje enskilt uppdrag, från första samtal till sista lådan.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>Hög tillgänglighet</h3><p>Snabb bokning och flexibla tider som passar ditt schema, inte tvärtom.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <h3>Konkurrenskraftiga priser</h3><p>Fast pris eller timpris — du väljer det som passar dig bäst. Inga dolda avgifter.</p></div>
   </div>
+</section>
+
+<section class="pt0">
+  <div class="sec-head"><span class="mono">Tjänster</span>
+  <h2 class="big">Hela flytten hos oss, från packning till besiktning.</h2>
+  <p>Ni behöver inte samordna flera företag. Vi tar hand om varje moment och ni har en kontaktperson genom hela flytten.</p></div>
+  <div class="grid3">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 21V12h6v9"/></svg></div>
+      <h3>Flytthjälp</h3><p>Professionell hjälp med hela flytten, från lastning till lossning, med anpassade flyttbilar.</p><a href="/flytthjalp">Läs mer →</a></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M8 20V9l6-5 6 5v11"/></svg></div>
+      <h3>Flyttstädning</h3><p>Grundlig städning som uppfyller kraven för godkänd slutbesiktning, med kvalitetsgaranti.</p><a href="/flyttstadning">Läs mer →</a></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 12h18M12 8v12M8 8V5h8v3"/></svg></div>
+      <h3>Nedpackning</h3><p>Vi packar säkert med professionellt material och minimerar risken för skador.</p><a href="/nedpackning">Läs mer →</a></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 12h18M8 7V4h8v3"/></svg></div>
+      <h3>Magasinering</h3><p>Klimatanpassade, larmade lokaler för glappet mellan ut- och inflyttning.</p><a href="/magasinering">Läs mer →</a></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h2M9 13h2M13 9h2M13 13h2"/></svg></div>
+      <h3>Företagsflytt</h3><p>Kontorsflytt med minimal störning, planerad utanför era ordinarie arbetstider.</p><a href="/foretagsflytt">Läs mer →</a></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 20V9l6-3 6 3v11"/><path d="M2 20h20M10 20v-5h4v5"/></svg></div>
+      <h3>Bärhjälp</h3><p>Extra par händer för tunga lyft, med egen flyttbil eller för möbler inom huset.</p><a href="/barhjalp">Läs mer →</a></div>
+  </div>
+</section>
+
+<section class="pt0"><div class="steps">
+  <span class="mono">Så går det till</span>
+  <h2>Fyra steg. Ni vet hela tiden vad som händer härnäst.</h2>
+  <div class="slist">
+    <div class="st glass"><span class="n">STEG 1</span><h4>Offertförfrågan</h4><p>Fyll i formuläret eller ring. Vi återkommer med en kostnadsfri offert inom 24 timmar.</p></div>
+    <div class="st glass"><span class="n">STEG 2</span><h4>Ni väljer prismodell</h4><p>Fast pris eller timpris. RUT-avdraget dras direkt på fakturan och vi sköter Skatteverket.</p></div>
+    <div class="st glass"><span class="n">STEG 3</span><h4>Flyttdagen</h4><p>Utbildad personal kommer på utsatt tid, med rätt fordon och rätt utrustning.</p></div>
+    <div class="st glass"><span class="n">STEG 4</span><h4>Städ och nycklar</h4><p>Vi städar den gamla bostaden så att slutbesiktningen går igenom.</p></div>
+  </div>
+</div></section>
+
+<section class="pt0">
+  <div class="sec-head"><span class="mono">Kundomdömen</span>
+  <h2 class="big">5,0 av 5 baserat på över 100 omdömen.</h2></div>
+  <div class="grid3"><div class="card"><div class="stars">★★★★★</div><p style="font-size:16.5px;color:var(--ink);font-weight:500">”Fantastisk service! Flyttgänget var otroligt professionella och snabba. Allting gick smidigt och de var noga med att hantera våra saker varsamt.”</p><div style="color:var(--ink-60);font-size:14.5px">Maria Andersson</div></div><div class="card"><div class="stars">★★★★★</div><p style="font-size:16.5px;color:var(--ink);font-weight:500">”Bästa flyttfirman jag anlitat. Punktliga, trevliga och effektiva. De hjälpte till med både packning och städning. Verkligen en helhetslösning!”</p><div style="color:var(--ink-60);font-size:14.5px">Erik Johansson</div></div><div class="card"><div class="stars">★★★★★</div><p style="font-size:16.5px;color:var(--ink);font-weight:500">”Jättebra pris och utmärkt service. Killarna var starka och snabba, men ändå försiktiga med alla möbler. Flyttstädningen var perfekt!”</p><div style="color:var(--ink-60);font-size:14.5px">Anna Svensson</div></div></div>
+</section>
 </div>
-
-<div class="wrap">
-  <section>
-    <div class="sec-head">
-      <span class="mono">Tjänster</span>
-      <h2 class="big">Hela flytten hos oss, från packning till besiktning.</h2>
-      <p>Ni behöver inte samordna flera företag. Vi tar hand om varje moment och ni har en kontaktperson genom hela flytten.</p>
-    </div>
-    <div class="grid3">
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 21V12h6v9"/></svg></div>
-        <h3>Flytthjälp</h3>
-        <p>Packning, bärhjälp, transport och montering på nya adressen. Filtar, band och kartonger tar vi med.</p>
-        <a href="/flytthjalp">Läs om flytthjälp →</a>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M8 20V9l6-5 6 5v11"/><path d="M4 20V13l4-3"/></svg></div>
-        <h3>Flyttstädning</h3>
-        <p>Städning enligt branschens checklista. Anmärks något vid besiktningen kommer vi tillbaka utan extra kostnad.</p>
-        <a href="/flyttstadning">Läs om flyttstädning →</a>
-      </div>
-      <div class="card">
-        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 12h18M8 7V4h8v3"/></svg></div>
-        <h3>Magasinering</h3>
-        <p>För glappet mellan tillträdesdatumen. Torrt och larmat utrymme, och vi hämtar och lämnar när ni säger till.</p>
-        <a href="/magasinering">Läs om magasinering →</a>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="steps">
-      <span class="mono">Så går det till</span>
-      <h2>Fyra steg. Ni vet hela tiden vad som händer härnäst.</h2>
-      <div class="slist">
-        <div class="st"><span class="n">STEG 1</span><h4>Genomgång</h4><p>Vi går igenom bohaget rum för rum, på plats eller via video, och räknar volym och antal fordon.</p></div>
-        <div class="st"><span class="n">STEG 2</span><h4>Fast pris</h4><p>Ni får en bindande offert med RUT&#8209;avdraget avräknat. Inga tillägg tillkommer efteråt.</p></div>
-        <div class="st"><span class="n">STEG 3</span><h4>Flyttdagen</h4><p>Teamet kommer på utsatt tid. Ni har ett namn och ett nummer att nå hela dagen.</p></div>
-        <div class="st"><span class="n">STEG 4</span><h4>Städ och nycklar</h4><p>Vi städar den gamla bostaden så att ni kan lämna nycklarna med besiktningen avklarad.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="quote">
-      <div class="stars">★★★★★</div>
-      <p>”Flyttkillarna var i tid, varsamma med våra ägodelar och själva flytten gick snabbt. Flyttstädningen var noggrant utförd, ända in i detaljerna.”</p>
-      <div class="who">Omdöme på Reco &nbsp;·&nbsp; februari 2025</div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="sec-head">
-      <span class="mono">Upptagningsområde</span>
-      <h2 class="big">Var ska ni flytta?</h2>
-      <p>Vi arbetar i hela Mälardalen. Välj er ort så ser ni priser, restider och vad som gäller just där.</p>
-    </div>
-    <div class="orter">
-      <a href="/flyttfirma-eskilstuna">Eskilstuna</a>
-      <a href="/flyttfirma-vasteras">Västerås</a>
-      <a href="/flyttfirma-strangnas">Strängnäs</a>
-      <a href="/flyttfirma-kungsor">Kungsör</a>
-      <a href="/flyttfirma-torshalla">Torshälla</a>
-      <a href="/flyttfirma-orebro">Örebro</a>
-      <a href="/flyttfirma-katrineholm">Katrineholm</a>
-      <a href="/flyttfirma-nykoping">Nyköping</a>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="final">
-      <div>
-        <h2>Redo att boka flytten?</h2>
-        <p>Berätta datum och adress så återkommer vi med ett fast pris inom ett dygn.</p>
-      </div>
-      <a class="btn-lt" href="/kontakt">Begär offert
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </section>
-</div>
-
+<section class="pt0"><div class="wrap">
+  <div class="sec-head"><span class="mono">Verksamhetsområde</span><h2 class="big">Var ska ni flytta?</h2>
+  <p>Med huvudkontor i Eskilstuna betjänar vi hela Mälardalen och stora delar av Sverige.</p></div>
+  <div class="orter"><a href="/flyttfirma-stockholm">Stockholm</a><a href="/flyttfirma-uppsala">Uppsala</a><a href="/flyttfirma-vasteras">Västerås</a><a href="/flyttfirma-eskilstuna">Eskilstuna</a><a href="/flyttfirma-orebro">Örebro</a><a href="/flyttfirma-sodertalje">Södertälje</a><a href="/flyttfirma-koping">Köping</a><a href="/flyttfirma-strangnas">Strängnäs</a><a href="/flyttfirma-katrineholm">Katrineholm</a><a href="/flyttfirma-nykoping">Nyköping</a><a href="/flyttfirma-arboga">Arboga</a><a href="/flyttfirma-hallstahammar">Hallstahammar</a></div>
+</div></section>
+<section class="pt0"><div class="wrap"><div class="sec-head"><span class="mono">Vanliga frågor</span><h2 class="big">Frågor vi får ofta</h2></div><div class="faq"><details><summary>Hur bokar jag en flytt?</summary><div class="a"><p>Du fyller enkelt i vårt offertformulär på hemsidan så återkommer vi med en kostnadsfri offert inom 24 timmar. Du kan också ringa oss direkt.</p></div></details><details><summary>Är ni försäkrade?</summary><div class="a"><p>Ja, vi är fullt försäkrade via Trygg-Hansa upp till 10 miljoner SEK. Det täcker eventuella skador på egendom under transport eller städning.</p></div></details><details><summary>Erbjuder ni RUT-avdrag?</summary><div class="a"><p>Ja, alla våra tjänster för privatpersoner ger rätt till RUT-avdrag. Det innebär att du bara betalar 50 % av arbetskostnaden direkt på fakturan. Vi sköter all administration med Skatteverket.</p></div></details><details><summary>Vad ingår i priset?</summary><div class="a"><p>Det beror på om du väljer fast pris eller timpris. I det fasta priset ingår allt specificerat arbete, transport och försäkring. Inga dolda avgifter tillkommer.</p></div></details></div></div></section><section class="pt0"><div class="wrap"><div class="final">
+  <div><h2>Begär en kostnadsfri offert</h2><p>Berätta datum och adress så återkommer vi inom 24 timmar. Fast pris eller timpris — ni väljer.</p></div>
+  <a class="btn btn-amber sheen" href="/kontakt">Begär offert<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></div></section>
 <footer>
   <div class="wrap">
     <div class="fgrid">
       <div>
         <h5>4Y Flytt &amp; Städ Sverige AB</h5>
-        <p>Hejargatan 2, 632 29 Eskilstuna<br>Org.nr 559328&#8209;5108<br>Godkänd för F&#8209;skatt · Ansvarsförsäkring</p>
+        <p>Hejargatan 2, 632 29 Eskilstuna<br>Org.nr 559328-5108<br>Godkänd för F&#8209;skatt<br>Trafiktillstånd, Transportstyrelsen<br>Försäkrade hos Trygg-Hansa, upp till 10 MSEK</p>
       </div>
       <div>
         <h5>Tjänster</h5>
-        <a href="/flytthjalp">Flytthjälp</a>
-        <a href="/flyttstadning">Flyttstädning</a>
-        <a href="/magasinering">Magasinering</a>
-        <a href="/kontorsflytt">Kontorsflytt</a>
+        <a href="/flytthjalp">Flytthjälp</a><a href="/flyttstadning">Flyttstädning</a>
+        <a href="/nedpackning">Nedpackning</a><a href="/magasinering">Magasinering</a>
+        <a href="/foretagsflytt">Företagsflytt</a><a href="/barhjalp">Bärhjälp</a>
+      </div>
+      <div>
+        <h5>Orter</h5>
+        <a href="/flyttfirma-stockholm">Stockholm</a><a href="/flyttfirma-uppsala">Uppsala</a>
+        <a href="/flyttfirma-vasteras">Västerås</a><a href="/flyttfirma-eskilstuna">Eskilstuna</a>
+        <a href="/flyttfirma-orebro">Örebro</a><a href="/flyttfirma-sodertalje">Södertälje</a>
       </div>
       <div>
         <h5>Kontakt</h5>
-        <a href="tel:+46160000000">016&#8209;000 00 00</a>
-        <a href="mailto:info@4yflytt.se">info@4yflytt.se</a>
-        <a href="/kontakt">Begär offert</a>
+        <a href="tel:+46102146353">010&#8209;214 63 53</a><a href="mailto:info@4yflytt.se">info@4yflytt.se</a>
+        <a href="/kontakt">Begär offert</a><a href="/om-oss">Om oss</a>
+        <p style="margin-top:10px">Måndag–fredag 08:00–17:00</p>
       </div>
     </div>
     <div class="fbot">
@@ -430,14 +509,15 @@ footer a:hover{color:var(--white)}
     </div>
   </div>
 </footer>
-
 <script>
 (function(){
-  var yta=document.getElementById('yta'), ytaV=document.getElementById('ytaV'),
+  var yta=document.getElementById('yta');
+  if(!yta) return;
+  var ytaV=document.getElementById('ytaV'),
       stad=document.getElementById('stad'), kDist=1, kVan=0;
 
   function segs(id,set){
-    var g=document.getElementById(id);
+    var g=document.getElementById(id); if(!g) return;
     g.addEventListener('click',function(e){
       var b=e.target.closest('button'); if(!b) return;
       [].forEach.call(g.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed', x===b);});
@@ -452,17 +532,16 @@ footer a:hover{color:var(--white)}
 
   function calc(){
     var m2=+yta.value; ytaV.textContent=m2;
-
     var flytt=kr((2400+m2*118)*kDist + kVan*m2*11);
-    var st = stad.checked ? kr(1200+m2*42) : 0;
+    var st = (stad && stad.checked) ? kr(1200+m2*42) : 0;
     var rut=Math.round((flytt+st)*0.5);
 
-    document.getElementById('pFlytt').textContent=fmt(flytt);
-    document.getElementById('pStad').textContent = st ? fmt(st) : 'ingår ej';
-    document.getElementById('rowStad').style.opacity = st ? 1 : .45;
-    document.getElementById('pRut').textContent='− '+fmt(rut);
-    document.getElementById('pTot').textContent=fmt(flytt+st-rut);
-    document.getElementById('nBox').textContent=Math.round(m2*0.62);
+    txt('pFlytt',fmt(flytt));
+    txt('pStad', st ? fmt(st) : 'ingår ej');
+    var rs=document.getElementById('rowStad'); if(rs) rs.style.opacity = st ? 1 : .45;
+    txt('pRut','− '+fmt(rut));
+    txt('pTot',fmt(flytt+st-rut));
+    txt('nBox',Math.round(m2*0.62));
 
     var s=Math.sqrt(m2/220), w=96+184*s, h=w*0.66,
         x=170-w/2, y=115-h/2,
@@ -495,14 +574,16 @@ footer a:hover{color:var(--white)}
     }
     document.getElementById('bx').innerHTML=g;
   }
-  function box(id,x,y,w,h){var e=document.getElementById(id);
+  function txt(id,v){var e=document.getElementById(id); if(e) e.textContent=v;}
+  function box(id,x,y,w,h){var e=document.getElementById(id); if(!e) return;
     e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('width',w);e.setAttribute('height',h);}
-  function at(id,o){var e=document.getElementById(id);for(var k in o)e.setAttribute(k,o[k]);}
+  function at(id,o){var e=document.getElementById(id); if(!e) return; for(var k in o)e.setAttribute(k,o[k]);}
 
   yta.addEventListener('input',calc);
-  stad.addEventListener('change',calc);
+  if(stad) stad.addEventListener('change',calc);
   calc();
 })();
+
 </script>
 </body>
 </html>
